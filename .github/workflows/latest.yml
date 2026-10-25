@@ -1,0 +1,41 @@
+name: Latest videos and tracks
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fill the LATEST block in every language version
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          comment_tag_name: LATEST
+          feed_list: >-
+            https://www.youtube.com/feeds/videos.xml?channel_id=UCR8er4mzn7Pa0YqSmy-aLRQ,
+            https://www.youtube.com/feeds/videos.xml?channel_id=UC3fz-6OxEaMGR7g9_zisA3A,
+            https://feeds.soundcloud.com/users/soundcloud:users:1075225540/sounds.rss
+          readme_path: >-
+            ./README.md,
+            ./Git-And-Docks/README/EN-en.md,
+            ./Git-And-Docks/README/BE-by.md,
+            ./Git-And-Docks/README/UK-ua.md,
+            ./Git-And-Docks/README/PL-pl.md,
+            ./Git-And-Docks/README/JA-jp.md,
+            ./Git-And-Docks/README/ZH-cn.md
+          max_post_count: 6
+          template: "- [$title]($url) <sub>$date</sub>$newline"
+          tag_post_pre_newline: true
+          date_format: "dd.mm.yyyy"
+          committer_username: github-actions[bot]
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: "Update latest videos and tracks"
