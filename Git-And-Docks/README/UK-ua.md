@@ -168,6 +168,9 @@ Source Filmmaker у сучасній оболонці: читає моделі, 
 ## Свіжі відео та треки
 
 <!-- LATEST:START -->
+- [Randin and Arkomiko - Memetria v2](https://www.youtube.com/watch?v=HEqO45ZssIg) <sub>28.08.2026</sub>
+- [Arkomiko - Urban surface](https://www.youtube.com/watch?v=M5Rz--itAFg) <sub>23.07.2021</sub>
+
 <!-- LATEST:END -->
 
 <sub>Список оновлюється автоматично.</sub>

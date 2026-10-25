@@ -168,6 +168,9 @@ Arkomiko的音乐播放与作品目录网站：发行作品、技术演示、Cov
 ## 最新视频与音乐
 
 <!-- LATEST:START -->
+- [Randin and Arkomiko - Memetria v2](https://www.youtube.com/watch?v=HEqO45ZssIg) <sub>28.08.2026</sub>
+- [Arkomiko - Urban surface](https://www.youtube.com/watch?v=M5Rz--itAFg) <sub>23.07.2021</sub>
+
 <!-- LATEST:END -->
 
 <sub>此列表自动更新。</sub>
