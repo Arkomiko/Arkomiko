@@ -4,6 +4,7 @@ Run from anywhere: python Git-And-Docks/tools/build_readme.py
 Edit the texts in T below, then rerun; the LATEST block is refilled by the workflow.
 """
 import os
+import re
 import sys
 from urllib.parse import quote
 
@@ -30,7 +31,7 @@ TYPING_FONT = {"ja": "M+PLUS+Rounded+1c", "zh": "Noto+Sans+SC"}
 GAMES = ["Detroit: Become Human", "Kena: Bridge of Spirits", "Mirror's Edge", "Mirror's Edge Catalyst", "Dishonored", "Black Mesa"]
 ARTISTS = [
     "Monstercat", "NCS", "Virtual Riot", "Geoxor", "Chime", "Exyl", "Stonebank", "Tristam", "Pixel Terror", "Braken",
-    "The Eden Project", "Sex Whales", "TULE (Lost Sky)", "Sub Urban", "Grabbitz", "Peper Skies", "Terminate", "Bossfight",
+    "The Eden Project", "Sex Whales", "TULE (Lost Sky)", "Sub Urban", "Grabbitz", "Paper Skies", "Teminite", "Bossfight",
     "Apashe", "Ace Aura", "Aero Chord", "Aiobahn", "Alan Walker", "Bishu", "Bonobo", "Bad Computer", "Crankdat",
 ]
 ANIME_EN = ["Dr. Stone", "Cyberpunk: Edgerunners", "Gate", "Bocchi the Rock!", "Birdy the Mighty: Decode",
@@ -43,7 +44,7 @@ T["ru"] = dict(
             "В высшей степени печально, если человек хорошо относится к тем, кто полезен ему,", "и плохо — к тем, кто бесполезен",
             "Пишу код. Учусь. Делюсь. Повторяю.", "Автоматизирую всё подряд", "Превращаю данные в решения",
             "Творю свободно и даю творить другим"],
-    b_from=("Откуда", "Междуславянск"), b_since=("В коде с", "2011"), b_status=("Статус", "ищу работу"), b_views="просмотры", stats_title="Arkomiko на GitHub",
+    b_from=("Откуда", "Это так важно?"), b_since=("В коде с", "2011"), b_status=("Статус", "ищу работу"), b_views="просмотры", stats_title="Arkomiko на GitHub",
     h=["Обо мне", "Стек", "Проекты", "Статистика GitHub", "Свежие видео и треки", "Любимое", "Связь", "Поддержать"],
     about="Пишу программы и игры, создаю музыку, моделирую в 3D и рисую дизайны — стараюсь понемногу преуспевать везде. "
           "Программирование осваиваю самостоятельно с 2011 года: всё началось ещё в начальной школе с модов "
@@ -67,7 +68,7 @@ T["ru"] = dict(
         oshi="Portable-программа для настройки макро-клавиатуры на чипе CH552 (6 клавиш и ручка-энкодер): сочетания клавиш, мультимедиа, мышь и системные действия. Пишет настройки прямо в память устройства, драйвер не нужен.",
         c2ui="Source Filmmaker в современной оболочке: читает модели, материалы, карты и сессии SFM 1:1 и редактирует их сам, не запуская sfm.exe. Интерфейс в духе библиотеки Steam и Unreal Engine 5. Разработка приостановлена.",
         music="Сайт-плеер и каталог музыки Arkomiko: релизы, техно-демки, каверы, сэмпл-паки и лицензии. Статический сайт на Astro, плеер со спектрометром на Vue, тёмная и светлая темы.",
-        mili="Новый проект — подробности скоро.",
+        mili="«Мипла» — отдельное окно, которое заменяет пианоролл любой DAW. Ноты ставятся методом LARD (Left Add / Right Delete): левая кнопка ставит ноту и сразу тянет её, правая удаляет, зажатая правая стирает протяжкой. Пропускает MIDI-клавиатуру в DAW в реальном времени, управляет play / stop / BPM через плагин MiliPlain Bridge (VST3, CLAP) и работает как MIDI-проигрыватель со встроенным звуком. Паттерн перетаскивается в DAW как MIDI-клип или в папку как .mid-файл.",
         goliath="Визуальная новелла: триллер, повседневность, философия, психология. Командный проект для Windows, macOS и Linux — на мне музыка и звук.",
         ue5=("Игры на Unreal Engine 5", "Три проекта в разработке. Подробности позже.")),
     activity="Активность за последний месяц", snake="Змейка, которая ест вклад на GitHub",
@@ -84,7 +85,7 @@ T["en"] = dict(
             "It is deeply sad when a person treats well those who are useful to them,", "and badly those who are not",
             "Write code. Learn. Share. Repeat.", "Automating everything in sight", "Turning data into decisions",
             "Creating freely — and helping others create"],
-    b_from=("From", "Mezhduslavyansk"), b_since=("Coding since", "2011"), b_status=("Status", "open to work"), b_views="profile views", stats_title="Arkomiko on GitHub",
+    b_from=("From", "Does it matter?"), b_since=("Coding since", "2011"), b_status=("Status", "open to work"), b_views="profile views", stats_title="Arkomiko on GitHub",
     h=["About", "Tech stack", "Projects", "GitHub stats", "Latest videos and tracks", "Favourites", "Contacts", "Support"],
     about="I write software and games, make music, model in 3D and draw designs — trying to get a little better at everything. "
           "Self-taught in programming since 2011: it all started in primary school with mods for J2ME (Java) games "
@@ -108,7 +109,7 @@ T["en"] = dict(
         oshi="Portable tool for configuring a CH552-based macro keypad (6 keys and a rotary knob): key combos, media keys, mouse and system actions. Writes settings straight to the device memory — no driver needed.",
         c2ui="Source Filmmaker in a modern shell: reads SFM models, materials, maps and sessions 1:1 and edits them itself, without ever running sfm.exe. UI inspired by the Steam library and Unreal Engine 5. Development paused.",
         music="Arkomiko's music player site and catalogue: releases, tech demos, covers, sample packs and licences. Static Astro site, Vue player with a spectrum analyser, dark and light themes.",
-        mili="New project — details coming soon.",
+        mili="“Mipla” is a standalone window that replaces the piano roll of any DAW. Notes follow the LARD method (Left Add / Right Delete): left click places a note and drags it right away, right click deletes, holding right erases with a swipe. It passes a MIDI keyboard through to the DAW in real time, drives play / stop / BPM via the MiliPlain Bridge plugin (VST3, CLAP) and also works as a MIDI player with built-in sound. Drag a pattern into the DAW as a MIDI clip or into a folder as a .mid file.",
         goliath="Visual novel: thriller, slice of life, philosophy, psychology. A team project for Windows, macOS and Linux — music and sound are my part.",
         ue5=("Unreal Engine 5 games", "Three projects in development. More to come.")),
     activity="Contributions over the last month", snake="Snake eating GitHub contributions",
@@ -123,7 +124,7 @@ T["be"] = dict(
             "Вельмі сумна, калі чалавек добра ставіцца да тых, хто яму карысны,", "і дрэнна — да тых, хто бескарысны",
             "Пішу код. Вучуся. Дзялюся. Паўтараю.", "Аўтаматызую ўсё запар", "Ператвараю даныя ў рашэнні",
             "Ствараю свабодна і даю ствараць іншым"],
-    b_from=("Адкуль", "Міжславянск"), b_since=("У кодзе з", "2011"), b_status=("Статус", "шукаю працу"), b_views="прагляды", stats_title="Arkomiko на GitHub",
+    b_from=("Адкуль", "Гэта так важна?"), b_since=("У кодзе з", "2011"), b_status=("Статус", "шукаю працу"), b_views="прагляды", stats_title="Arkomiko на GitHub",
     h=["Пра мяне", "Стэк", "Праекты", "Статыстыка GitHub", "Свежыя відэа і трэкі", "Любімае", "Сувязь", "Падтрымаць"],
     about="Пішу праграмы і гульні, ствараю музыку, мадэлюю ў 3D і малюю дызайны — стараюся патроху дасягаць поспеху ва ўсім. "
           "Праграмаванне асвойваю самастойна з 2011 года: усё пачалося яшчэ ў пачатковай школе з модаў "
@@ -147,7 +148,7 @@ T["be"] = dict(
         oshi="Portable-праграма для наладкі макра-клавіятуры на чыпе CH552 (6 клавіш і ручка-энкодар): спалучэнні клавіш, мультымедыя, мыш і сістэмныя дзеянні. Запісвае налады проста ў памяць прылады, драйвер не патрэбны.",
         c2ui="Source Filmmaker у сучаснай абалонцы: чытае мадэлі, матэрыялы, карты і сесіі SFM 1:1 і рэдагуе іх сам, не запускаючы sfm.exe. Інтэрфейс у духу бібліятэкі Steam і Unreal Engine 5. Распрацоўка прыпынена.",
         music="Сайт-плэер і каталог музыкі Arkomiko: рэлізы, тэхна-дэма, каверы, сэмпл-пакі і ліцэнзіі. Статычны сайт на Astro, плэер са спектрометрам на Vue, цёмная і светлая тэмы.",
-        mili="Новы праект — падрабязнасці хутка.",
+        mili="«Міпла» — асобнае акно, якое замяняе піяна-рол любой DAW. Ноты ставяцца метадам LARD (Left Add / Right Delete): левая кнопка ставіць ноту і адразу цягне яе, правая выдаляе, заціснутая правая сцірае працяжкай. Прапускае MIDI-клавіятуру ў DAW у рэальным часе, кіруе play / stop / BPM праз плагін MiliPlain Bridge (VST3, CLAP) і працуе як MIDI-плэер з убудаваным гукам. Патэрн перацягваецца ў DAW як MIDI-кліп або ў тэчку як .mid-файл.",
         goliath="Візуальная навела: трылер, паўсядзённасць, філасофія, псіхалогія. Камандны праект для Windows, macOS і Linux — на мне музыка і гук.",
         ue5=("Гульні на Unreal Engine 5", "Тры праекты ў распрацоўцы. Падрабязнасці пазней.")),
     activity="Актыўнасць за апошні месяц", snake="Змейка, якая есць унёсак на GitHub",
@@ -162,7 +163,7 @@ T["uk"] = dict(
             "Надзвичайно сумно, коли людина добре ставиться до тих, хто їй корисний,", "і погано — до тих, хто некорисний",
             "Пишу код. Вчуся. Ділюся. Повторюю.", "Автоматизую все підряд", "Перетворюю дані на рішення",
             "Творю вільно і даю творити іншим"],
-    b_from=("Звідки", "Міжслов'янськ"), b_since=("У коді з", "2011"), b_status=("Статус", "шукаю роботу"), b_views="перегляди", stats_title="Arkomiko на GitHub",
+    b_from=("Звідки", "Це так важливо?"), b_since=("У коді з", "2011"), b_status=("Статус", "шукаю роботу"), b_views="перегляди", stats_title="Arkomiko на GitHub",
     h=["Про мене", "Стек", "Проєкти", "Статистика GitHub", "Свіжі відео та треки", "Улюблене", "Зв'язок", "Підтримати"],
     about="Пишу програми та ігри, створюю музику, моделюю в 3D і малюю дизайни — намагаюся потроху встигати всюди. "
           "Програмування опановую самостійно з 2011 року: усе почалося ще в початковій школі з модів "
@@ -186,7 +187,7 @@ T["uk"] = dict(
         oshi="Portable-програма для налаштування макроклавіатури на чипі CH552 (6 клавіш і ручка-енкодер): поєднання клавіш, мультимедіа, миша та системні дії. Записує налаштування прямо в пам'ять пристрою, драйвер не потрібен.",
         c2ui="Source Filmmaker у сучасній оболонці: читає моделі, матеріали, мапи та сесії SFM 1:1 і редагує їх сам, не запускаючи sfm.exe. Інтерфейс у дусі бібліотеки Steam та Unreal Engine 5. Розробку призупинено.",
         music="Сайт-плеєр і каталог музики Arkomiko: релізи, техно-демо, кавери, семпл-паки та ліцензії. Статичний сайт на Astro, плеєр зі спектрометром на Vue, темна та світла теми.",
-        mili="Новий проєкт — подробиці незабаром.",
+        mili="«Мипла» — окреме вікно, яке замінює піаноролл будь-якої DAW. Ноти ставляться методом LARD (Left Add / Right Delete): ліва кнопка ставить ноту й одразу тягне її, права видаляє, затиснута права стирає протяжкою. Пропускає MIDI-клавіатуру в DAW у реальному часі, керує play / stop / BPM через плагін MiliPlain Bridge (VST3, CLAP) і працює як MIDI-програвач із вбудованим звуком. Патерн перетягується в DAW як MIDI-кліп або в теку як .mid-файл.",
         goliath="Візуальна новела: трилер, повсякденність, філософія, психологія. Командний проєкт для Windows, macOS і Linux — на мені музика та звук.",
         ue5=("Ігри на Unreal Engine 5", "Три проєкти в розробці. Подробиці згодом.")),
     activity="Активність за останній місяць", snake="Змійка, яка їсть внесок на GitHub",
@@ -201,7 +202,7 @@ T["pl"] = dict(
             "To wielki smutek, gdy ktoś dobrze traktuje tych, którzy są mu przydatni,", "a źle tych, którzy są bezużyteczni",
             "Piszę kod. Uczę się. Dzielę się. Powtarzam.", "Automatyzuję wszystko, co się da", "Zamieniam dane w decyzje",
             "Tworzę swobodnie i pozwalam tworzyć innym"],
-    b_from=("Skąd", "Międzysłowiańsk"), b_since=("Programowanie od", "2011"), b_status=("Status", "szukam pracy"), b_views="wyświetlenia", stats_title="Arkomiko na GitHubie",
+    b_from=("Skąd", "Czy to takie ważne?"), b_since=("Programowanie od", "2011"), b_status=("Status", "szukam pracy"), b_views="wyświetlenia", stats_title="Arkomiko na GitHubie",
     h=["O mnie", "Stack", "Projekty", "Statystyki GitHub", "Najnowsze filmy i utwory", "Ulubione", "Kontakt", "Wsparcie"],
     about="Piszę programy i gry, tworzę muzykę, modeluję w 3D i projektuję grafiki — staram się po trochu rozwijać we wszystkim. "
           "Programowania uczę się samodzielnie od 2011 roku: wszystko zaczęło się jeszcze w podstawówce od modów "
@@ -225,7 +226,7 @@ T["pl"] = dict(
         oshi="Przenośny program do konfiguracji klawiatury makro na układzie CH552 (6 klawiszy i pokrętło): skróty klawiszowe, multimedia, mysz i akcje systemowe. Zapisuje ustawienia bezpośrednio w pamięci urządzenia — bez sterowników.",
         c2ui="Source Filmmaker w nowoczesnej odsłonie: wczytuje modele, materiały, mapy i sesje SFM 1:1 i sam je edytuje, bez uruchamiania sfm.exe. Interfejs w stylu biblioteki Steam i Unreal Engine 5. Prace wstrzymane.",
         music="Strona-odtwarzacz i katalog muzyki Arkomiko: wydania, dema, covery, sample packi i licencje. Statyczna strona na Astro, odtwarzacz ze spektrometrem na Vue, motyw ciemny i jasny.",
-        mili="Nowy projekt — szczegóły wkrótce.",
+        mili="„Mipla” to osobne okno, które zastępuje piano roll dowolnego DAW. Nuty wstawia się metodą LARD (Left Add / Right Delete): lewy przycisk stawia nutę i od razu ją przeciąga, prawy usuwa, przytrzymany prawy ściera pociągnięciem. Przepuszcza klawiaturę MIDI do DAW w czasie rzeczywistym, steruje play / stop / BPM przez wtyczkę MiliPlain Bridge (VST3, CLAP) i działa jako odtwarzacz MIDI z wbudowanym dźwiękiem. Wzorzec przeciąga się do DAW jako klip MIDI albo do folderu jako plik .mid.",
         goliath="Powieść wizualna: thriller, okruchy życia, filozofia, psychologia. Projekt zespołowy na Windows, macOS i Linux — moja działka to muzyka i dźwięk.",
         ue5=("Gry na Unreal Engine 5", "Trzy projekty w produkcji. Szczegóły później.")),
     activity="Aktywność z ostatniego miesiąca", snake="Wąż zjadający kontrybucje na GitHubie",
@@ -240,7 +241,7 @@ T["ja"] = dict(
             "役に立つ人には優しく、役に立たない人には冷たくする――それは何より悲しいことだ",
             "コードを書く。学ぶ。共有する。繰り返す。", "なんでも自動化する", "データを決断に変える",
             "自由に創り、みんなが創れる場をつくる"],
-    b_from=("出身", "メジュドゥスラヴャンスク"), b_since=("コード歴", "2011年から"), b_status=("ステータス", "求職中"), b_views="閲覧数", stats_title="ArkomikoのGitHub統計",
+    b_from=("出身", "それって大事？"), b_since=("コード歴", "2011年から"), b_status=("ステータス", "求職中"), b_views="閲覧数", stats_title="ArkomikoのGitHub統計",
     h=["自己紹介", "技術スタック", "プロジェクト", "GitHub統計", "最新の動画・楽曲", "お気に入り", "連絡先", "支援"],
     about="プログラムやゲームを作り、音楽を制作し、3Dモデリングやデザインも手がけています。どの分野でも少しずつ上達するのが目標です。"
           "プログラミングは2011年から独学で、小学生の頃にNokiaやSony Ericssonのガラケー向けJ2ME（Java）ゲームを改造したのが始まりでした。",
@@ -263,7 +264,7 @@ T["ja"] = dict(
         oshi="CH552チップ搭載のマクロキーパッド（6キー＋ロータリーノブ）を設定するポータブルツール。キーの組み合わせ、メディア操作、マウス、システム操作を割り当て、設定をデバイスのメモリに直接書き込みます。ドライバー不要。",
         c2ui="Source Filmmakerをモダンな外観で。SFMのモデル、マテリアル、マップ、セッションを1:1で読み込み、sfm.exeを起動せずに編集します。UIはSteamライブラリとUnreal Engine 5がモチーフ。開発は一時停止中。",
         music="Arkomikoの音楽プレイヤー兼カタログサイト。リリース、デモ、カバー、サンプルパック、ライセンス情報を掲載。Astroの静的サイトに、スペクトラム表示付きのVueプレイヤー。ダーク／ライトテーマ対応。",
-        mili="新プロジェクト。詳細は近日公開。",
+        mili="「ミプラ」は、あらゆるDAWのピアノロールを置き換える独立ウィンドウ。ノートはLARD方式（Left Add / Right Delete）で入力：左クリックで配置してそのままドラッグ、右クリックで削除、右ボタンを押したままなぞると消去。MIDIキーボードの信号をリアルタイムでDAWへ中継し、プラグインMiliPlain Bridge（VST3・CLAP）でDAWの再生／停止／BPMを操作・同期します。内蔵音源付きのMIDIプレイヤーとしても動作。パターンはDAWへドラッグするとMIDIクリップに、フォルダへドラッグすると.midファイルになります。",
         goliath="ビジュアルノベル（スリラー／日常／哲学／心理）。Windows・macOS・Linux向けのチーム制作で、音楽とサウンドを担当。",
         ue5=("Unreal Engine 5のゲーム", "3本を開発中。詳細は後日。")),
     activity="直近1か月のアクティビティ", snake="GitHubのコントリビューションを食べるヘビ",
@@ -279,7 +280,7 @@ T["zh"] = dict(
     typing=["无论肤色与性别，重要的是你本质上是怎样的人",
             "只善待对自己有用的人，而冷待无用之人，这是最可悲的事",
             "写代码。学习。分享。重复。", "把一切都自动化", "把数据变成决策", "自由创作，也让他人自由创作"],
-    b_from=("来自", "梅日杜斯拉维扬斯克"), b_since=("编程始于", "2011"), b_status=("状态", "求职中"), b_views="访问量", stats_title="Arkomiko 的 GitHub 统计",
+    b_from=("来自", "这很重要吗？"), b_since=("编程始于", "2011"), b_status=("状态", "求职中"), b_views="访问量", stats_title="Arkomiko 的 GitHub 统计",
     h=["关于我", "技术栈", "项目", "GitHub统计", "最新视频与音乐", "我的最爱", "联系方式", "支持我"],
     about="我写程序、做游戏、创作音乐、做3D建模，也画设计稿——每个领域都想一点点做得更好。"
           "2011年开始自学编程：最初是在小学时为诺基亚和索尼爱立信按键手机修改J2ME（Java）游戏。",
@@ -302,7 +303,7 @@ T["zh"] = dict(
         oshi="用于配置CH552芯片宏键盘（6个按键＋旋钮）的便携工具：快捷键、多媒体、鼠标和系统操作。设置直接写入设备内存，无需驱动。",
         c2ui="现代外壳下的Source Filmmaker：1:1读取SFM的模型、材质、地图和会话并直接编辑，无需运行sfm.exe。界面风格参考Steam库和Unreal Engine 5。开发已暂停。",
         music="Arkomiko的音乐播放与作品目录网站：发行作品、技术演示、Cover、采样包和授权信息。基于Astro的静态站点，Vue播放器带频谱显示，支持深色和浅色主题。",
-        mili="新项目，详情即将公布。",
+        mili="「Mipla」是一个独立窗口，可替代任何DAW的钢琴卷帘。音符采用LARD方式（Left Add / Right Delete）输入：左键放置音符并立即拖动，右键删除，按住右键划过即可擦除。它能把MIDI键盘信号实时传入DAW，通过MiliPlain Bridge插件（VST3、CLAP）控制并同步DAW的播放、停止和BPM，也能作为自带音源的MIDI播放器使用。Pattern可直接拖进DAW成为MIDI片段，或拖到文件夹生成.mid文件。",
         goliath="视觉小说：惊悚、日常、哲学、心理。面向Windows、macOS和Linux的团队作品，我负责音乐与音效。",
         ue5=("Unreal Engine 5游戏", "三个项目开发中，详情稍后公布。")),
     activity="最近一个月的贡献", snake="吃掉GitHub贡献格子的贪吃蛇",
@@ -411,7 +412,7 @@ def build(lang):
         card("SFM C2UI", gh + "SFM_C2UI", p["c2ui"], [tag("Python", "python"), tag("Qt 6", "qt"), tag("OpenGL", "opengl"), tag("Source Filmmaker", "valve")]),
     ]) + "\n</tr>\n<tr>\n" + "\n".join([
         card("Arkomiko.Music", gh + "Arkomiko.Music", p["music"], [tag("Astro", "astro"), tag("Vue 3", "vuedotjs"), tag("TypeScript", "typescript")]),
-        card("MiliPlain", gh + "MiliPlain", p["mili"], []),
+        card("MiliPlain", gh + "MiliPlain", p["mili"], [tag("MIDI"), tag("VST3"), tag("CLAP"), tag("LARD")]),
     ]) + "\n</tr>\n<tr>\n" + "\n".join([
         card("Goliath Child", "https://handakote.itch.io/goliathchild", p["goliath"], [tag("itch.io", "itchdotio"), tag("Visual Novel")]),
         card(p["ue5"][0], None, p["ue5"][1], [tag("Unreal Engine 5", "unrealengine"), tag("C++", "cplusplus")]),
@@ -464,7 +465,7 @@ def build(lang):
         link_badge("Email", "mailto:Arikomika@gmail.com", "gmail", "Email"),
         link_badge("Telegram", "https://t.me/arkomiko_gr", "telegram"),
         link_badge("VK", "https://vk.com/arkomiko", "vk"),
-        link_badge("X", "https://x.com/arkomiko", "x"),
+        link_badge("X", "https://x.com/arkomiko21299", "x"),
         link_badge("YouTube", "https://www.youtube.com/@Arkomiko", "youtube"),
         link_badge("Arkomiko Music", "https://www.youtube.com/@arkomiko_music", "youtube"),
         link_badge("Twitch", "https://www.twitch.tv/arkomiko", "twitch"),
@@ -559,10 +560,19 @@ def build(lang):
 """
 
 
+LATEST = re.compile(r"<!-- LATEST:START -->.*?<!-- LATEST:END -->", re.S)
+
+
 if __name__ == "__main__":
     for lang in LANGS:
         path = os.path.join(ROOT, FILES[lang])
         os.makedirs(os.path.dirname(path) or ROOT, exist_ok=True)
+        text = build(lang)
+        # keep whatever the "Latest videos and tracks" workflow has already filled in
+        if os.path.exists(path):
+            old = LATEST.search(open(path, encoding="utf-8").read())
+            if old:
+                text = LATEST.sub(lambda _: old.group(0), text)
         with open(path, "w", encoding="utf-8", newline="\n") as f:
-            f.write(build(lang))
+            f.write(text)
         print("wrote", FILES[lang])

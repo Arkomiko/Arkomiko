@@ -14,7 +14,7 @@
 
 <a href="../../README.md"><img src="https://img.shields.io/badge/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-26222b?style=for-the-badge" alt="Русский"></a> <a href="EN-en.md"><img src="https://img.shields.io/badge/English-26222b?style=for-the-badge" alt="English"></a> <a href="BE-by.md"><img src="https://img.shields.io/badge/%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D0%BA%D0%B0%D1%8F-26222b?style=for-the-badge" alt="Беларуская"></a> <a href="UK-ua.md"><img src="https://img.shields.io/badge/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0-26222b?style=for-the-badge" alt="Українська"></a> <a href="PL-pl.md"><img src="https://img.shields.io/badge/Polski-26222b?style=for-the-badge" alt="Polski"></a> <img src="https://img.shields.io/badge/%E6%97%A5%E6%9C%AC%E8%AA%9E-ffc7ec?style=for-the-badge" alt="日本語"> <a href="ZH-cn.md"><img src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87-26222b?style=for-the-badge" alt="中文"></a>
 
-<img src="https://img.shields.io/badge/%E5%87%BA%E8%BA%AB-%E3%83%A1%E3%82%B8%E3%83%A5%E3%83%89%E3%82%A5%E3%82%B9%E3%83%A9%E3%83%B4%E3%83%A3%E3%83%B3%E3%82%B9%E3%82%AF-ffc7ec?style=flat-square&labelColor=26222b" alt="出身: メジュドゥスラヴャンスク"> <img src="https://img.shields.io/badge/%E3%82%B3%E3%83%BC%E3%83%89%E6%AD%B4-2011%E5%B9%B4%E3%81%8B%E3%82%89-ffc7ec?style=flat-square&labelColor=26222b" alt="コード歴 2011年から"> <img src="https://img.shields.io/badge/%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9-%E6%B1%82%E8%81%B7%E4%B8%AD-b983ff?style=flat-square&labelColor=26222b" alt="ステータス: 求職中"> <img src="https://visitor-badge.laobi.icu/badge?page_id=Arkomiko.Arkomiko&left_color=%2326222b&right_color=%23b983ff&left_text=%E9%96%B2%E8%A6%A7%E6%95%B0" alt="閲覧数">
+<img src="https://img.shields.io/badge/%E5%87%BA%E8%BA%AB-%E3%81%9D%E3%82%8C%E3%81%A3%E3%81%A6%E5%A4%A7%E4%BA%8B%EF%BC%9F-ffc7ec?style=flat-square&labelColor=26222b" alt="出身: それって大事？"> <img src="https://img.shields.io/badge/%E3%82%B3%E3%83%BC%E3%83%89%E6%AD%B4-2011%E5%B9%B4%E3%81%8B%E3%82%89-ffc7ec?style=flat-square&labelColor=26222b" alt="コード歴 2011年から"> <img src="https://img.shields.io/badge/%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9-%E6%B1%82%E8%81%B7%E4%B8%AD-b983ff?style=flat-square&labelColor=26222b" alt="ステータス: 求職中"> <img src="https://visitor-badge.laobi.icu/badge?page_id=Arkomiko.Arkomiko&left_color=%2326222b&right_color=%23b983ff&left_text=%E9%96%B2%E8%A6%A7%E6%95%B0" alt="閲覧数">
 
 </div>
 
@@ -103,9 +103,9 @@ Arkomikoの音楽プレイヤー兼カタログサイト。リリース、デモ
 </td>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/Arkomiko/MiliPlain">MiliPlain</a></h3>
-新プロジェクト。詳細は近日公開。
+「ミプラ」は、あらゆるDAWのピアノロールを置き換える独立ウィンドウ。ノートはLARD方式（Left Add / Right Delete）で入力：左クリックで配置してそのままドラッグ、右クリックで削除、右ボタンを押したままなぞると消去。MIDIキーボードの信号をリアルタイムでDAWへ中継し、プラグインMiliPlain Bridge（VST3・CLAP）でDAWの再生／停止／BPMを操作・同期します。内蔵音源付きのMIDIプレイヤーとしても動作。パターンはDAWへドラッグするとMIDIクリップに、フォルダへドラッグすると.midファイルになります。
 <br><br>
-
+<img src="https://img.shields.io/badge/MIDI-26222b?style=flat-square" alt="MIDI"> <img src="https://img.shields.io/badge/VST3-26222b?style=flat-square" alt="VST3"> <img src="https://img.shields.io/badge/CLAP-26222b?style=flat-square" alt="CLAP"> <img src="https://img.shields.io/badge/LARD-26222b?style=flat-square" alt="LARD">
 </td>
 </tr>
 <tr>
@@ -192,7 +192,7 @@ Arkomikoの音楽プレイヤー兼カタログサイト。リリース、デモ
 <details>
 <summary><b>音楽</b></summary>
 
-- Monstercat, NCS, Virtual Riot, Geoxor, Chime, Exyl, Stonebank, Tristam, Pixel Terror, Braken, The Eden Project, Sex Whales, TULE (Lost Sky), Sub Urban, Grabbitz, Peper Skies, Terminate, Bossfight, Apashe, Ace Aura, Aero Chord, Aiobahn, Alan Walker, Bishu, Bonobo, Bad Computer, Crankdat ほか多数
+- Monstercat, NCS, Virtual Riot, Geoxor, Chime, Exyl, Stonebank, Tristam, Pixel Terror, Braken, The Eden Project, Sex Whales, TULE (Lost Sky), Sub Urban, Grabbitz, Paper Skies, Teminite, Bossfight, Apashe, Ace Aura, Aero Chord, Aiobahn, Alan Walker, Bishu, Bonobo, Bad Computer, Crankdat ほか多数
 
 </details>
 
@@ -226,7 +226,7 @@ Arkomikoの音楽プレイヤー兼カタログサイト。リリース、デモ
 
 <div align="center">
 
-<a href="mailto:Arikomika@gmail.com"><img src="https://img.shields.io/badge/Email-26222b?style=for-the-badge&logo=gmail&logoColor=ffc7ec" alt="Email"></a> <a href="https://t.me/arkomiko_gr"><img src="https://img.shields.io/badge/Telegram-26222b?style=for-the-badge&logo=telegram&logoColor=ffc7ec" alt="Telegram"></a> <a href="https://vk.com/arkomiko"><img src="https://img.shields.io/badge/VK-26222b?style=for-the-badge&logo=vk&logoColor=ffc7ec" alt="VK"></a> <a href="https://x.com/arkomiko"><img src="https://img.shields.io/badge/X-26222b?style=for-the-badge&logo=x&logoColor=ffc7ec" alt="X"></a> <a href="https://www.youtube.com/@Arkomiko"><img src="https://img.shields.io/badge/YouTube-26222b?style=for-the-badge&logo=youtube&logoColor=ffc7ec" alt="YouTube"></a> <a href="https://www.youtube.com/@arkomiko_music"><img src="https://img.shields.io/badge/Arkomiko%20Music-26222b?style=for-the-badge&logo=youtube&logoColor=ffc7ec" alt="Arkomiko Music"></a> <a href="https://www.twitch.tv/arkomiko"><img src="https://img.shields.io/badge/Twitch-26222b?style=for-the-badge&logo=twitch&logoColor=ffc7ec" alt="Twitch"></a> <a href="https://www.tiktok.com/@arkomiko_tt"><img src="https://img.shields.io/badge/TikTok-26222b?style=for-the-badge&logo=tiktok&logoColor=ffc7ec" alt="TikTok"></a> <a href="https://soundcloud.com/arkomiko"><img src="https://img.shields.io/badge/SoundCloud-26222b?style=for-the-badge&logo=soundcloud&logoColor=ffc7ec" alt="SoundCloud"></a>
+<a href="mailto:Arikomika@gmail.com"><img src="https://img.shields.io/badge/Email-26222b?style=for-the-badge&logo=gmail&logoColor=ffc7ec" alt="Email"></a> <a href="https://t.me/arkomiko_gr"><img src="https://img.shields.io/badge/Telegram-26222b?style=for-the-badge&logo=telegram&logoColor=ffc7ec" alt="Telegram"></a> <a href="https://vk.com/arkomiko"><img src="https://img.shields.io/badge/VK-26222b?style=for-the-badge&logo=vk&logoColor=ffc7ec" alt="VK"></a> <a href="https://x.com/arkomiko21299"><img src="https://img.shields.io/badge/X-26222b?style=for-the-badge&logo=x&logoColor=ffc7ec" alt="X"></a> <a href="https://www.youtube.com/@Arkomiko"><img src="https://img.shields.io/badge/YouTube-26222b?style=for-the-badge&logo=youtube&logoColor=ffc7ec" alt="YouTube"></a> <a href="https://www.youtube.com/@arkomiko_music"><img src="https://img.shields.io/badge/Arkomiko%20Music-26222b?style=for-the-badge&logo=youtube&logoColor=ffc7ec" alt="Arkomiko Music"></a> <a href="https://www.twitch.tv/arkomiko"><img src="https://img.shields.io/badge/Twitch-26222b?style=for-the-badge&logo=twitch&logoColor=ffc7ec" alt="Twitch"></a> <a href="https://www.tiktok.com/@arkomiko_tt"><img src="https://img.shields.io/badge/TikTok-26222b?style=for-the-badge&logo=tiktok&logoColor=ffc7ec" alt="TikTok"></a> <a href="https://soundcloud.com/arkomiko"><img src="https://img.shields.io/badge/SoundCloud-26222b?style=for-the-badge&logo=soundcloud&logoColor=ffc7ec" alt="SoundCloud"></a>
 
 </div>
 

@@ -14,7 +14,7 @@
 
 <img src="https://img.shields.io/badge/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-ffc7ec?style=for-the-badge" alt="Русский"> <a href="Git-And-Docks/README/EN-en.md"><img src="https://img.shields.io/badge/English-26222b?style=for-the-badge" alt="English"></a> <a href="Git-And-Docks/README/BE-by.md"><img src="https://img.shields.io/badge/%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D0%BA%D0%B0%D1%8F-26222b?style=for-the-badge" alt="Беларуская"></a> <a href="Git-And-Docks/README/UK-ua.md"><img src="https://img.shields.io/badge/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0-26222b?style=for-the-badge" alt="Українська"></a> <a href="Git-And-Docks/README/PL-pl.md"><img src="https://img.shields.io/badge/Polski-26222b?style=for-the-badge" alt="Polski"></a> <a href="Git-And-Docks/README/JA-jp.md"><img src="https://img.shields.io/badge/%E6%97%A5%E6%9C%AC%E8%AA%9E-26222b?style=for-the-badge" alt="日本語"></a> <a href="Git-And-Docks/README/ZH-cn.md"><img src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87-26222b?style=for-the-badge" alt="中文"></a>
 
-<img src="https://img.shields.io/badge/%D0%9E%D1%82%D0%BA%D1%83%D0%B4%D0%B0-%D0%9C%D0%B5%D0%B6%D0%B4%D1%83%D1%81%D0%BB%D0%B0%D0%B2%D1%8F%D0%BD%D1%81%D0%BA-ffc7ec?style=flat-square&labelColor=26222b" alt="Откуда: Междуславянск"> <img src="https://img.shields.io/badge/%D0%92%20%D0%BA%D0%BE%D0%B4%D0%B5%20%D1%81-2011-ffc7ec?style=flat-square&labelColor=26222b" alt="В коде с 2011"> <img src="https://img.shields.io/badge/%D0%A1%D1%82%D0%B0%D1%82%D1%83%D1%81-%D0%B8%D1%89%D1%83%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%83-b983ff?style=flat-square&labelColor=26222b" alt="Статус: ищу работу"> <img src="https://visitor-badge.laobi.icu/badge?page_id=Arkomiko.Arkomiko&left_color=%2326222b&right_color=%23b983ff&left_text=%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D1%8B" alt="просмотры">
+<img src="https://img.shields.io/badge/%D0%9E%D1%82%D0%BA%D1%83%D0%B4%D0%B0-%D0%AD%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%20%D0%B2%D0%B0%D0%B6%D0%BD%D0%BE%3F-ffc7ec?style=flat-square&labelColor=26222b" alt="Откуда: Это так важно?"> <img src="https://img.shields.io/badge/%D0%92%20%D0%BA%D0%BE%D0%B4%D0%B5%20%D1%81-2011-ffc7ec?style=flat-square&labelColor=26222b" alt="В коде с 2011"> <img src="https://img.shields.io/badge/%D0%A1%D1%82%D0%B0%D1%82%D1%83%D1%81-%D0%B8%D1%89%D1%83%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%83-b983ff?style=flat-square&labelColor=26222b" alt="Статус: ищу работу"> <img src="https://visitor-badge.laobi.icu/badge?page_id=Arkomiko.Arkomiko&left_color=%2326222b&right_color=%23b983ff&left_text=%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D1%8B" alt="просмотры">
 
 </div>
 
@@ -103,9 +103,9 @@ Source Filmmaker в современной оболочке: читает мод
 </td>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/Arkomiko/MiliPlain">MiliPlain</a></h3>
-Новый проект — подробности скоро.
+«Мипла» — отдельное окно, которое заменяет пианоролл любой DAW. Ноты ставятся методом LARD (Left Add / Right Delete): левая кнопка ставит ноту и сразу тянет её, правая удаляет, зажатая правая стирает протяжкой. Пропускает MIDI-клавиатуру в DAW в реальном времени, управляет play / stop / BPM через плагин MiliPlain Bridge (VST3, CLAP) и работает как MIDI-проигрыватель со встроенным звуком. Паттерн перетаскивается в DAW как MIDI-клип или в папку как .mid-файл.
 <br><br>
-
+<img src="https://img.shields.io/badge/MIDI-26222b?style=flat-square" alt="MIDI"> <img src="https://img.shields.io/badge/VST3-26222b?style=flat-square" alt="VST3"> <img src="https://img.shields.io/badge/CLAP-26222b?style=flat-square" alt="CLAP"> <img src="https://img.shields.io/badge/LARD-26222b?style=flat-square" alt="LARD">
 </td>
 </tr>
 <tr>
@@ -192,7 +192,7 @@ Source Filmmaker в современной оболочке: читает мод
 <details>
 <summary><b>Музыка</b></summary>
 
-- Monstercat, NCS, Virtual Riot, Geoxor, Chime, Exyl, Stonebank, Tristam, Pixel Terror, Braken, The Eden Project, Sex Whales, TULE (Lost Sky), Sub Urban, Grabbitz, Peper Skies, Terminate, Bossfight, Apashe, Ace Aura, Aero Chord, Aiobahn, Alan Walker, Bishu, Bonobo, Bad Computer, Crankdat и многие другие
+- Monstercat, NCS, Virtual Riot, Geoxor, Chime, Exyl, Stonebank, Tristam, Pixel Terror, Braken, The Eden Project, Sex Whales, TULE (Lost Sky), Sub Urban, Grabbitz, Paper Skies, Teminite, Bossfight, Apashe, Ace Aura, Aero Chord, Aiobahn, Alan Walker, Bishu, Bonobo, Bad Computer, Crankdat и многие другие
 
 </details>
 
@@ -226,7 +226,7 @@ Source Filmmaker в современной оболочке: читает мод
 
 <div align="center">
 
-<a href="mailto:Arikomika@gmail.com"><img src="https://img.shields.io/badge/Email-26222b?style=for-the-badge&logo=gmail&logoColor=ffc7ec" alt="Email"></a> <a href="https://t.me/arkomiko_gr"><img src="https://img.shields.io/badge/Telegram-26222b?style=for-the-badge&logo=telegram&logoColor=ffc7ec" alt="Telegram"></a> <a href="https://vk.com/arkomiko"><img src="https://img.shields.io/badge/VK-26222b?style=for-the-badge&logo=vk&logoColor=ffc7ec" alt="VK"></a> <a href="https://x.com/arkomiko"><img src="https://img.shields.io/badge/X-26222b?style=for-the-badge&logo=x&logoColor=ffc7ec" alt="X"></a> <a href="https://www.youtube.com/@Arkomiko"><img src="https://img.shields.io/badge/YouTube-26222b?style=for-the-badge&logo=youtube&logoColor=ffc7ec" alt="YouTube"></a> <a href="https://www.youtube.com/@arkomiko_music"><img src="https://img.shields.io/badge/Arkomiko%20Music-26222b?style=for-the-badge&logo=youtube&logoColor=ffc7ec" alt="Arkomiko Music"></a> <a href="https://www.twitch.tv/arkomiko"><img src="https://img.shields.io/badge/Twitch-26222b?style=for-the-badge&logo=twitch&logoColor=ffc7ec" alt="Twitch"></a> <a href="https://www.tiktok.com/@arkomiko_tt"><img src="https://img.shields.io/badge/TikTok-26222b?style=for-the-badge&logo=tiktok&logoColor=ffc7ec" alt="TikTok"></a> <a href="https://soundcloud.com/arkomiko"><img src="https://img.shields.io/badge/SoundCloud-26222b?style=for-the-badge&logo=soundcloud&logoColor=ffc7ec" alt="SoundCloud"></a>
+<a href="mailto:Arikomika@gmail.com"><img src="https://img.shields.io/badge/Email-26222b?style=for-the-badge&logo=gmail&logoColor=ffc7ec" alt="Email"></a> <a href="https://t.me/arkomiko_gr"><img src="https://img.shields.io/badge/Telegram-26222b?style=for-the-badge&logo=telegram&logoColor=ffc7ec" alt="Telegram"></a> <a href="https://vk.com/arkomiko"><img src="https://img.shields.io/badge/VK-26222b?style=for-the-badge&logo=vk&logoColor=ffc7ec" alt="VK"></a> <a href="https://x.com/arkomiko21299"><img src="https://img.shields.io/badge/X-26222b?style=for-the-badge&logo=x&logoColor=ffc7ec" alt="X"></a> <a href="https://www.youtube.com/@Arkomiko"><img src="https://img.shields.io/badge/YouTube-26222b?style=for-the-badge&logo=youtube&logoColor=ffc7ec" alt="YouTube"></a> <a href="https://www.youtube.com/@arkomiko_music"><img src="https://img.shields.io/badge/Arkomiko%20Music-26222b?style=for-the-badge&logo=youtube&logoColor=ffc7ec" alt="Arkomiko Music"></a> <a href="https://www.twitch.tv/arkomiko"><img src="https://img.shields.io/badge/Twitch-26222b?style=for-the-badge&logo=twitch&logoColor=ffc7ec" alt="Twitch"></a> <a href="https://www.tiktok.com/@arkomiko_tt"><img src="https://img.shields.io/badge/TikTok-26222b?style=for-the-badge&logo=tiktok&logoColor=ffc7ec" alt="TikTok"></a> <a href="https://soundcloud.com/arkomiko"><img src="https://img.shields.io/badge/SoundCloud-26222b?style=for-the-badge&logo=soundcloud&logoColor=ffc7ec" alt="SoundCloud"></a>
 
 </div>
 
